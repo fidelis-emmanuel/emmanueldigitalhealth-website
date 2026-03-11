@@ -1,65 +1,106 @@
-import Image from "next/image";
+import Link from "next/link";
+import ServiceCard from "@/components/ServiceCard";
+
+const services = [
+  {
+    icon: "🩺",
+    title: "ClinicalScribe AI",
+    description:
+      "AI-powered SOAP note generation for behavioral health clinicians. Cut documentation time by 60%.",
+  },
+  {
+    icon: "🔗",
+    title: "FHIR Integration",
+    description:
+      "Connect your systems with HL7 FHIR standards. Interoperability built for modern healthcare.",
+  },
+  {
+    icon: "🤖",
+    title: "AI Agent Development",
+    description:
+      "Custom Claude-powered agents for healthcare workflows — monitoring, triage, documentation.",
+  },
+  {
+    icon: "📊",
+    title: "Healthcare AI Strategy",
+    description:
+      "Strategic consulting to identify where AI delivers the most value in your care delivery.",
+  },
+];
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <>
+      {/* Hero */}
+      <section className="text-white py-28 px-4" style={{ backgroundColor: "#0f172a" }}>
+        <div className="max-w-4xl mx-auto text-center">
+          <p className="text-sm font-semibold uppercase tracking-widest mb-4" style={{ color: "#0d9488" }}>
+            Healthcare AI Engineering &amp; Consulting
           </p>
+          <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-6">
+            Healthcare AI Engineer
+            <br />
+            &amp; Consultant
+          </h1>
+          <p className="text-slate-300 text-xl max-w-2xl mx-auto mb-10">
+            10 years in behavioral health. Now building production AI systems that solve real
+            clinical problems — with Claude API, FHIR, and modern cloud infrastructure.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              href="/services"
+              className="text-white px-8 py-3 rounded-md font-semibold transition-colors hover:opacity-90"
+              style={{ backgroundColor: "#0d9488" }}
+            >
+              View Services
+            </Link>
+            <Link
+              href="/contact"
+              className="px-8 py-3 rounded-md font-semibold transition-colors hover:bg-teal-brand hover:text-white"
+              style={{ border: "1px solid #0d9488", color: "#0d9488" }}
+            >
+              Contact Me
+            </Link>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* Services overview */}
+      <section className="py-20 px-4" style={{ backgroundColor: "#f8fafc" }}>
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-4" style={{ color: "#0f172a" }}>
+            What I Build
+          </h2>
+          <p className="text-slate-500 text-center mb-12 max-w-xl mx-auto">
+            Production healthcare AI systems — from clinical documentation to FHIR integrations
+            to autonomous agent teams.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {services.map((s) => (
+              <ServiceCard key={s.title} {...s} />
+            ))}
+          </div>
+          <div className="text-center mt-10">
+            <Link
+              href="/services"
+              className="inline-block text-white px-6 py-3 rounded-md font-semibold hover:opacity-90 transition-colors"
+              style={{ backgroundColor: "#0d9488" }}
+            >
+              See All Services →
+            </Link>
+          </div>
         </div>
-      </main>
-    </div>
+      </section>
+
+      {/* Trust strip */}
+      <section className="py-6 px-4" style={{ backgroundColor: "#0f172a" }}>
+        <div className="max-w-4xl mx-auto flex flex-wrap justify-center gap-8 text-slate-400 text-sm">
+          <span>Built on <span style={{ color: "#0d9488" }}>Railway</span></span>
+          <span>Deployed on <span style={{ color: "#0d9488" }}>Vercel</span></span>
+          <span>Powered by <span style={{ color: "#0d9488" }}>Claude API</span></span>
+          <span>Database: <span style={{ color: "#0d9488" }}>PostgreSQL</span></span>
+        </div>
+      </section>
+    </>
   );
 }
