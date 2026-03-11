@@ -67,10 +67,7 @@ export default function Services() {
         {services.map((s) => (
           <div
             key={s.title}
-            className="rounded-xl p-8 transition-colors"
-            style={{ border: "1px solid #e2e8f0" }}
-            onMouseOver={(e) => (e.currentTarget.style.borderColor = "#0d9488")}
-            onMouseOut={(e) => (e.currentTarget.style.borderColor = "#e2e8f0")}
+            className="rounded-xl p-8 transition-colors hover-teal-border"
           >
             <div className="text-4xl mb-4">{s.icon}</div>
             <h2 className="text-2xl font-bold mb-3" style={{ color: "#0f172a" }}>
