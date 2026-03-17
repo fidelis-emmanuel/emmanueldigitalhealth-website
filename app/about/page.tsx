@@ -45,12 +45,19 @@ export default function About() {
           <h3 className="text-xl font-bold mb-3" style={{ color: "#0f172a" }}>
             The 90-Day Healthcare AI Engineering Program
           </h3>
-          <p className="text-slate-600 leading-relaxed mb-6">
+          <p className="text-slate-600 leading-relaxed mb-4">
             In 2025, I committed to a rigorous 90-day intensive to become a production-ready
             Healthcare AI Engineer — covering full-stack development (Next.js + FastAPI), Claude
             API integration, FHIR standards, multi-agent systems, and production deployment on
             Railway and Vercel.
           </p>
+          <div
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold mb-6"
+            style={{ backgroundColor: "#f0fdf4", border: "1px solid #bbf7d0", color: "#15803d" }}
+          >
+            <span>📍</span>
+            <span>Week 7, Day 30 of 90 — 7 production modules deployed to Railway &amp; Vercel</span>
+          </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {program.map((item) => (
               <div

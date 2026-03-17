@@ -43,8 +43,9 @@ export default function Home() {
             &amp; Consultant
           </h1>
           <p className="text-slate-300 text-xl max-w-2xl mx-auto mb-10">
-            10 years in behavioral health. Now building production AI systems that solve real
-            clinical problems — with Claude API, FHIR, and modern cloud infrastructure.
+            10 years in behavioral health. Now building production AI systems — HIPAA-compliant
+            EHR platform with scheduling, medication management, AI clinical documentation, and
+            FHIR R4 interoperability. Live in production.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link

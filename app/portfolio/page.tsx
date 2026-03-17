@@ -4,6 +4,24 @@ const techStack1 = [
   "Next.js", "FastAPI", "Claude API", "PostgreSQL", "Railway", "Vercel", "Tailwind CSS", "asyncpg",
 ];
 const techStack2 = ["Claude API", "FastAPI", "SOAP Notes", "ICD-10", "PostgreSQL"];
+const techStack3 = ["FastAPI", "PostgreSQL", "APScheduler", "FHIR R4", "asyncpg"];
+const techStack4 = ["Claude API", "FastAPI", "PostgreSQL", "FHIR R4", "APScheduler", "asyncpg"];
+
+function TechTags({ tags }: { tags: string[] }) {
+  return (
+    <div className="flex flex-wrap gap-2">
+      {tags.map((t) => (
+        <span
+          key={t}
+          className="px-3 py-1 rounded-full text-sm text-slate-700"
+          style={{ backgroundColor: "#f1f5f9" }}
+        >
+          {t}
+        </span>
+      ))}
+    </div>
+  );
+}
 
 export default function Portfolio() {
   return (
@@ -17,13 +35,10 @@ export default function Portfolio() {
         </p>
       </div>
 
-      {/* MindBridge case study */}
+      {/* Case Study 01 — MindBridge */}
       <div className="rounded-xl overflow-hidden mb-10" style={{ border: "1px solid #e2e8f0" }}>
         <div className="px-8 py-6" style={{ backgroundColor: "#0f172a" }}>
-          <span
-            className="text-sm font-semibold uppercase tracking-widest"
-            style={{ color: "#0d9488" }}
-          >
+          <span className="text-sm font-semibold uppercase tracking-widest" style={{ color: "#0d9488" }}>
             Case Study 01
           </span>
           <h2 className="text-3xl font-bold text-white mt-2">MindBridge Health AI</h2>
@@ -34,9 +49,7 @@ export default function Portfolio() {
         <div className="p-8">
           <div className="grid md:grid-cols-3 gap-6 mb-8">
             <div>
-              <h3 className="font-semibold mb-2" style={{ color: "#0f172a" }}>
-                The Problem
-              </h3>
+              <h3 className="font-semibold mb-2" style={{ color: "#0f172a" }}>The Problem</h3>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Behavioral health clinicians had no unified system to track patient risk levels,
                 medication adherence, and crisis patterns in real time. High-risk patients were
@@ -44,9 +57,7 @@ export default function Portfolio() {
               </p>
             </div>
             <div>
-              <h3 className="font-semibold mb-2" style={{ color: "#0f172a" }}>
-                The Solution
-              </h3>
+              <h3 className="font-semibold mb-2" style={{ color: "#0f172a" }}>The Solution</h3>
               <p className="text-slate-600 text-sm leading-relaxed">
                 A full-stack AI platform with patient risk scoring, Claude-powered natural
                 language database queries, real-time dashboards, and an admission workflow —
@@ -54,9 +65,7 @@ export default function Portfolio() {
               </p>
             </div>
             <div>
-              <h3 className="font-semibold mb-2" style={{ color: "#0f172a" }}>
-                The Outcome
-              </h3>
+              <h3 className="font-semibold mb-2" style={{ color: "#0f172a" }}>The Outcome</h3>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Production-deployed system handling patient records, risk stratification
                 (CRITICAL / HIGH / MEDIUM / LOW), SOAP note generation via ClinicalScribe AI,
@@ -64,24 +73,10 @@ export default function Portfolio() {
               </p>
             </div>
           </div>
-
           <div className="mb-8">
-            <h3 className="font-semibold mb-3" style={{ color: "#0f172a" }}>
-              Tech Stack
-            </h3>
-            <div className="flex flex-wrap gap-2">
-              {techStack1.map((t) => (
-                <span
-                  key={t}
-                  className="px-3 py-1 rounded-full text-sm text-slate-700"
-                  style={{ backgroundColor: "#f1f5f9" }}
-                >
-                  {t}
-                </span>
-              ))}
-            </div>
+            <h3 className="font-semibold mb-3" style={{ color: "#0f172a" }}>Tech Stack</h3>
+            <TechTags tags={techStack1} />
           </div>
-
           <Link
             href="https://mind-bridge-health-ai.vercel.app"
             target="_blank"
@@ -94,12 +89,9 @@ export default function Portfolio() {
         </div>
       </div>
 
-      {/* ClinicalScribe */}
-      <div className="rounded-xl p-8" style={{ border: "1px solid #e2e8f0" }}>
-        <span
-          className="text-sm font-semibold uppercase tracking-widest"
-          style={{ color: "#0d9488" }}
-        >
+      {/* Case Study 02 — ClinicalScribe */}
+      <div className="rounded-xl p-8 mb-10" style={{ border: "1px solid #e2e8f0" }}>
+        <span className="text-sm font-semibold uppercase tracking-widest" style={{ color: "#0d9488" }}>
           Case Study 02
         </span>
         <h2 className="text-2xl font-bold mt-2 mb-3" style={{ color: "#0f172a" }}>
@@ -111,16 +103,113 @@ export default function Portfolio() {
           lists, and risk flags — in under 3 seconds. Built on the Claude API with a single-shot
           structured JSON extraction pattern.
         </p>
-        <div className="flex flex-wrap gap-2">
-          {techStack2.map((t) => (
-            <span
-              key={t}
-              className="px-3 py-1 rounded-full text-sm text-slate-700"
-              style={{ backgroundColor: "#f1f5f9" }}
-            >
-              {t}
-            </span>
-          ))}
+        <TechTags tags={techStack2} />
+      </div>
+
+      {/* Case Study 03 — Appointment Scheduling */}
+      <div className="rounded-xl overflow-hidden mb-10" style={{ border: "1px solid #e2e8f0" }}>
+        <div className="px-8 py-6" style={{ backgroundColor: "#0f172a" }}>
+          <span className="text-sm font-semibold uppercase tracking-widest" style={{ color: "#0d9488" }}>
+            Case Study 03
+          </span>
+          <h2 className="text-3xl font-bold text-white mt-2">Appointment Scheduling System</h2>
+          <p className="text-slate-300 mt-2">
+            Production scheduling module for behavioral health clinics — Week 6
+          </p>
+        </div>
+        <div className="p-8">
+          <div className="grid md:grid-cols-3 gap-6 mb-8">
+            <div>
+              <h3 className="font-semibold mb-2" style={{ color: "#0f172a" }}>The Problem</h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Behavioral health clinics lack integrated scheduling tools — appointments tracked
+                in spreadsheets, no-show rates unmonitored, reminders manual, and no link between
+                scheduling and clinical documentation.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2" style={{ color: "#0f172a" }}>The Solution</h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Production scheduling API with conflict detection, automated 24hr and 1hr reminder
+                emails via APScheduler, FHIR R4 Appointment resource, and auto-trigger of
+                ClinicalScribe on appointment completion.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2" style={{ color: "#0f172a" }}>The Outcome</h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                6-endpoint REST API deployed to Railway with full CRUD, no-show rate tracking,
+                FHIR interoperability, and seamless integration into the MindBridge platform.
+              </p>
+            </div>
+          </div>
+          <div className="mb-6">
+            <h3 className="font-semibold mb-3" style={{ color: "#0f172a" }}>Tech Stack</h3>
+            <TechTags tags={techStack3} />
+          </div>
+          <Link
+            href="https://mind-bridge-health-ai.vercel.app/appointments"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-white px-6 py-3 rounded-md font-medium hover:opacity-90 transition-colors"
+            style={{ backgroundColor: "#0d9488" }}
+          >
+            View Module →
+          </Link>
+        </div>
+      </div>
+
+      {/* Case Study 04 — Medication Management */}
+      <div className="rounded-xl overflow-hidden mb-10" style={{ border: "1px solid #e2e8f0" }}>
+        <div className="px-8 py-6" style={{ backgroundColor: "#0f172a" }}>
+          <span className="text-sm font-semibold uppercase tracking-widest" style={{ color: "#0d9488" }}>
+            Case Study 04
+          </span>
+          <h2 className="text-3xl font-bold text-white mt-2">AI-Powered Medication Management</h2>
+          <p className="text-slate-300 mt-2">
+            Drug interaction AI + refill tracking agent — Week 7
+          </p>
+        </div>
+        <div className="p-8">
+          <div className="grid md:grid-cols-3 gap-6 mb-8">
+            <div>
+              <h3 className="font-semibold mb-2" style={{ color: "#0f172a" }}>The Problem</h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Behavioral health prescribers lack real-time drug interaction checks. Refill
+                management is manual and error-prone. Prescription changes in SOAP notes are
+                not automatically applied to the medication record.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2" style={{ color: "#0f172a" }}>The Solution</h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Claude Sonnet-powered drug interaction checker blocks CRITICAL combinations
+                (MAOI+SSRI, etc.) before save. Refill tracking agent runs daily at 7am UTC.
+                ClinicalScribe auto-extracts medication changes from SOAP notes.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2" style={{ color: "#0f172a" }}>The Outcome</h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                7-endpoint REST API with FHIR R4 MedicationRequest resource, 24/24 tests passing,
+                HIPAA-compliant refill email alerts via Resend, and full audit logging —
+                deployed to Railway.
+              </p>
+            </div>
+          </div>
+          <div className="mb-6">
+            <h3 className="font-semibold mb-3" style={{ color: "#0f172a" }}>Tech Stack</h3>
+            <TechTags tags={techStack4} />
+          </div>
+          <Link
+            href="https://mind-bridge-health-ai.vercel.app/medications"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-white px-6 py-3 rounded-md font-medium hover:opacity-90 transition-colors"
+            style={{ backgroundColor: "#0d9488" }}
+          >
+            View Module →
+          </Link>
         </div>
       </div>
     </div>
