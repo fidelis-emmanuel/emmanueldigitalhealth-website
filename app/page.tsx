@@ -26,6 +26,18 @@ const services = [
     description:
       "Strategic consulting to identify where AI delivers the most value in your care delivery.",
   },
+  {
+    icon: "📅",
+    title: "Appointment Scheduling",
+    description:
+      "End-to-end scheduling for behavioral health clinics — conflict detection, automated reminders, no-show tracking, FHIR R4.",
+  },
+  {
+    icon: "💊",
+    title: "Medication Management",
+    description:
+      "Drug interaction checker via Claude API, refill tracking, and SOAP-note-driven prescription extraction. FHIR R4.",
+  },
 ];
 
 export default function Home() {
@@ -76,7 +88,7 @@ export default function Home() {
             Production healthcare AI systems — from clinical documentation to FHIR integrations
             to autonomous agent teams.
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((s) => (
               <ServiceCard key={s.title} {...s} />
             ))}

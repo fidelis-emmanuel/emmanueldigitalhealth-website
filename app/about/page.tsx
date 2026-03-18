@@ -56,7 +56,7 @@ export default function About() {
             style={{ backgroundColor: "#f0fdf4", border: "1px solid #bbf7d0", color: "#15803d" }}
           >
             <span>📍</span>
-            <span>Week 7, Day 30 of 90 — 7 production modules deployed to Railway &amp; Vercel</span>
+            <span>Week 7 of 12 complete — 6 production modules deployed — 24/24 tests passing — 69+ GitHub commits</span>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {program.map((item) => (

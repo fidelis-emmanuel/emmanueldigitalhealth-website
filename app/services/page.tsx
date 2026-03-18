@@ -49,6 +49,30 @@ const services = [
       "Implementation roadmap",
     ],
   },
+  {
+    icon: "📅",
+    title: "Appointment Scheduling Systems",
+    description:
+      "End-to-end scheduling infrastructure for behavioral health clinics. Conflict detection, automated reminders via APScheduler, no-show tracking, FHIR R4 Appointment resource, and ClinicalScribe auto-trigger on completion.",
+    bullets: [
+      "Conflict detection",
+      "Automated reminders (APScheduler)",
+      "No-show tracking",
+      "FHIR R4 Appointment resource",
+    ],
+  },
+  {
+    icon: "💊",
+    title: "AI-Powered Medication Management",
+    description:
+      "Drug interaction checker using Claude API — blocks CRITICAL combinations before save. Refill tracking agent, Prescription AI auto-extracts medication changes from SOAP notes. FHIR R4 MedicationRequest endpoint.",
+    bullets: [
+      "Drug interaction checker (Claude API)",
+      "CRITICAL combination blocking",
+      "Refill tracking agent",
+      "FHIR R4 MedicationRequest",
+    ],
+  },
 ];
 
 export default function Services() {
