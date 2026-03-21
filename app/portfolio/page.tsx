@@ -6,6 +6,7 @@ const techStack1 = [
 const techStack2 = ["Claude API", "FastAPI", "SOAP Notes", "ICD-10", "PostgreSQL"];
 const techStack3 = ["FastAPI", "PostgreSQL", "APScheduler", "FHIR R4", "asyncpg"];
 const techStack4 = ["Claude API", "FastAPI", "PostgreSQL", "FHIR R4", "APScheduler", "asyncpg"];
+const techStack5 = ["Claude API", "FastAPI", "PostgreSQL", "FHIR R4", "APScheduler", "asyncpg"];
 
 function TechTags({ tags }: { tags: string[] }) {
   return (
@@ -203,6 +204,64 @@ export default function Portfolio() {
           </div>
           <Link
             href="https://mind-bridge-health-ai.vercel.app/medications"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-white px-6 py-3 rounded-md font-medium hover:opacity-90 transition-colors"
+            style={{ backgroundColor: "#0d9488" }}
+          >
+            View Module →
+          </Link>
+        </div>
+      </div>
+
+      {/* Case Study 05 — Treatment Plan Builder */}
+      <div className="rounded-xl overflow-hidden mb-10" style={{ border: "1px solid #e2e8f0" }}>
+        <div className="px-8 py-6" style={{ backgroundColor: "#0f172a" }}>
+          <span className="text-sm font-semibold uppercase tracking-widest" style={{ color: "#0d9488" }}>
+            Case Study 05
+          </span>
+          <h2 className="text-3xl font-bold text-white mt-2">AI Treatment Plan Builder</h2>
+          <p className="text-slate-300 mt-2">
+            Automated care planning with goal tracking — Week 8
+          </p>
+        </div>
+        <div className="p-8">
+          <div className="grid md:grid-cols-3 gap-6 mb-8">
+            <div>
+              <h3 className="font-semibold mb-2" style={{ color: "#0f172a" }}>The Problem</h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Behavioral health clinicians spend 45–60 minutes manually writing treatment plans
+                for each new patient. Plans go un-reviewed for months, violating Joint Commission
+                and Medicaid 90-day review requirements. Goal progress is never tracked between
+                sessions.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2" style={{ color: "#0f172a" }}>The Solution</h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                AI-generated treatment plans from patient diagnoses, PHQ-9 scores, and SOAP notes
+                via Claude Sonnet API. Single-shot HIPAA-safe prompt returns presenting problem,
+                SMART goals, interventions, and barriers. Goal progress tracked 1–5 per session
+                with automatic goal achievement detection. APScheduler daily 7am review alert
+                fires 14 days before deadline.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2" style={{ color: "#0f172a" }}>The Outcome</h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                11 FastAPI routes, FHIR R4 CarePlan endpoint, 3 database tables
+                (treatment_plans, treatment_goals, goal_progress), 84 progress entries seeded.
+                Rating=5 auto-promotes goal to &ldquo;achieved&rdquo;; all goals achieved auto-completes
+                the plan in a single asyncpg transaction. 9 tests passing. Deployed to Railway.
+              </p>
+            </div>
+          </div>
+          <div className="mb-6">
+            <h3 className="font-semibold mb-3" style={{ color: "#0f172a" }}>Tech Stack</h3>
+            <TechTags tags={techStack5} />
+          </div>
+          <Link
+            href="https://mind-bridge-health-ai.vercel.app/treatment-plans"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-white px-6 py-3 rounded-md font-medium hover:opacity-90 transition-colors"
