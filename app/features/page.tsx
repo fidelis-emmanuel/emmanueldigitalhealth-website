@@ -1,4 +1,7 @@
-const modules = [
+"use client";
+import { useState } from "react";
+
+const clinicianModules = [
   {
     icon: "🩺",
     name: "Patient Risk Dashboard",
@@ -55,16 +58,85 @@ const modules = [
   },
 ];
 
+const patientModules = [
+  {
+    icon: "📝",
+    name: "Self Check-In & PHQ-9",
+    desc: "Patients complete digital check-ins and PHQ-9 depression screening from any device — no app download required. Results flow directly into the clinician's risk dashboard before the session starts.",
+    details: ["PHQ-9 digital screening", "Session check-in from any device", "Results visible to care team immediately", "No account creation required"],
+  },
+  {
+    icon: "🚨",
+    name: "Crisis Support",
+    desc: "When PHQ-9 scores reach clinical thresholds, patients receive immediate on-screen support resources and the care team is alerted in real time. No one waits hours for a callback.",
+    details: ["Immediate on-screen crisis resources", "Auto-alert to care team", "Severity-matched response", "Safe messaging guidelines built in"],
+  },
+  {
+    icon: "📅",
+    name: "Appointment Visibility",
+    desc: "Patients see their upcoming appointments and receive automated reminder emails at 24 hours and 1 hour before their session — reducing no-shows without staff intervention.",
+    details: ["Upcoming appointment view", "24hr + 1hr email reminders", "Telehealth join link in email", "No login required for reminders"],
+  },
+  {
+    icon: "💬",
+    name: "Secure Messaging",
+    desc: "HIPAA-compliant message thread between patient and care team. Patients can send questions, updates, or concerns between sessions — routed directly to their assigned clinician.",
+    details: ["HIPAA-compliant channel", "Assigned clinician routing", "Message history preserved", "No third-party apps needed"],
+  },
+  {
+    icon: "📋",
+    name: "Care Plan Access",
+    desc: "Patients can view their active treatment goals and care plan milestones. Transparency into the plan increases engagement and keeps patients accountable between sessions.",
+    details: ["Active treatment goal visibility", "Milestone tracking", "Clinician-controlled sharing", "Read-only patient view"],
+  },
+  {
+    icon: "📈",
+    name: "PHQ-9 Progress Tracking",
+    desc: "Patients and clinicians can both see PHQ-9 score history over time. Visualized trend data makes it easier to have productive conversations about progress in sessions.",
+    details: ["PHQ-9 score history", "Color-coded severity trend", "Shared view with clinician", "Updated after every check-in"],
+  },
+];
+
 export default function Features() {
+  const [activeTab, setActiveTab] = useState<"clinicians" | "patients">("clinicians");
+  const modules = activeTab === "clinicians" ? clinicianModules : patientModules;
+
   return (
     <div className="max-w-5xl mx-auto px-4 py-20">
-      <div className="text-center mb-16">
+      <div className="text-center mb-12">
         <h1 className="text-4xl font-bold mb-4" style={{ color: "#0f172a" }}>
           Platform Features
         </h1>
         <p className="text-slate-600 text-lg max-w-xl mx-auto">
           Every module in MindBridge is built for behavioral health — not adapted from a general EHR.
         </p>
+      </div>
+
+      {/* Tab switcher */}
+      <div className="flex justify-center mb-12">
+        <div className="flex rounded-lg overflow-hidden border border-slate-200">
+          <button
+            onClick={() => setActiveTab("clinicians")}
+            className="px-8 py-3 text-sm font-semibold transition-colors"
+            style={{
+              backgroundColor: activeTab === "clinicians" ? "#0d9488" : "#fff",
+              color: activeTab === "clinicians" ? "#fff" : "#475569",
+            }}
+          >
+            For Clinicians
+          </button>
+          <button
+            onClick={() => setActiveTab("patients")}
+            className="px-8 py-3 text-sm font-semibold transition-colors"
+            style={{
+              backgroundColor: activeTab === "patients" ? "#0d9488" : "#fff",
+              color: activeTab === "patients" ? "#fff" : "#475569",
+              borderLeft: "1px solid #e2e8f0",
+            }}
+          >
+            For Patients
+          </button>
+        </div>
       </div>
 
       <div className="space-y-8">

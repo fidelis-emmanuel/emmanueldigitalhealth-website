@@ -1,13 +1,13 @@
 export default function Footer() {
   return (
-    <footer className="text-slate-400 py-10 mt-20" style={{ backgroundColor: "#0f172a" }}>
-      <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between gap-6">
+    <footer style={{ backgroundColor: "#0f172a" }}>
+      <div className="max-w-6xl mx-auto px-4 pt-10 pb-6 flex flex-col md:flex-row justify-between gap-6 text-slate-400">
         <div>
           <p className="text-white font-semibold text-lg">Emmanuel Digital Health LLC</p>
-          <p className="text-sm mt-1">Healthcare AI Engineering &amp; Consulting</p>
+          <p className="text-sm mt-1">MindBridge Health AI</p>
           <p className="text-sm mt-1">
-            <a href="mailto:fidejo2k@yahoo.com" style={{ color: "#0d9488" }}>
-              fidejo2k@yahoo.com
+            <a href="mailto:hello@mindbridge.health" style={{ color: "#0d9488" }}>
+              hello@mindbridge.health
             </a>
           </p>
         </div>
@@ -25,17 +25,12 @@ export default function Footer() {
             </a>
           ))}
         </div>
-        <div className="text-sm">
-          <p className="text-white font-medium mb-2">Built With</p>
-          <p>
-            Railway &nbsp;·&nbsp;
-            <span style={{ color: "#0d9488" }}>Vercel</span>
-            &nbsp;·&nbsp; Claude API
-          </p>
-          <p className="mt-4 text-xs">
-            &copy; {new Date().getFullYear()} Emmanuel Digital Health LLC
-          </p>
-        </div>
+      </div>
+      <div
+        className="max-w-6xl mx-auto px-4 pb-8 text-center text-xs text-slate-500"
+        style={{ borderTop: "1px solid #1e293b", paddingTop: "1.5rem" }}
+      >
+        &copy; 2026 Emmanuel Digital Health LLC &nbsp;&middot;&nbsp; HIPAA Compliant &nbsp;&middot;&nbsp; Louisville, KY
       </div>
     </footer>
   );

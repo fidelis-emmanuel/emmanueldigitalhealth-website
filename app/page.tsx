@@ -45,11 +45,17 @@ export default function Home() {
             <br />
             <span style={{ color: "#0d9488" }}>Behavioral Health</span>
           </h1>
-          <p className="text-slate-300 text-xl max-w-2xl mx-auto mb-10">
+          <p className="text-slate-300 text-xl max-w-2xl mx-auto mb-8">
             MindBridge Health AI is a production-ready, HIPAA-compliant EHR platform with
             AI clinical documentation, crisis protocol, and 837P billing — purpose-built for
             behavioral health clinics.
           </p>
+
+          {/* Stats bar */}
+          <p className="text-sm mb-10 tracking-wide" style={{ color: "#0d9488" }}>
+            136 Tests Passing &nbsp;&middot;&nbsp; HIPAA Compliant &nbsp;&middot;&nbsp; Built by a Behavioral Health Veteran &nbsp;&middot;&nbsp; Live in Production
+          </p>
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/demo"
@@ -203,16 +209,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Trust strip */}
-      <section className="py-6 px-4" style={{ backgroundColor: "#0f172a" }}>
-        <div className="max-w-4xl mx-auto flex flex-wrap justify-center gap-8 text-slate-400 text-sm">
-          <span>HIPAA <span style={{ color: "#0d9488" }}>Compliant Architecture</span></span>
-          <span>Deployed on <span style={{ color: "#0d9488" }}>Vercel + Railway</span></span>
-          <span>Powered by <span style={{ color: "#0d9488" }}>Claude AI</span></span>
-          <span>Database: <span style={{ color: "#0d9488" }}>PostgreSQL</span></span>
-          <span><span style={{ color: "#0d9488" }}>136 tests</span> passing</span>
-        </div>
-      </section>
     </>
   );
 }
