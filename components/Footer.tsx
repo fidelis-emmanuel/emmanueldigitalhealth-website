@@ -14,8 +14,9 @@ export default function Footer() {
         <div className="flex flex-col gap-1 text-sm">
           <p className="text-white font-medium mb-2">Quick Links</p>
           {[
-            { href: "/services", label: "Services" },
-            { href: "/portfolio", label: "Portfolio" },
+            { href: "/features", label: "Features" },
+            { href: "/pricing", label: "Pricing" },
+            { href: "/demo", label: "Request Demo" },
             { href: "/about", label: "About" },
             { href: "/contact", label: "Contact" },
           ].map((l) => (

@@ -1,12 +1,5 @@
 import Link from "next/link";
 
-const program = [
-  { label: "Weeks 1–3", desc: "MindBridge Health AI" },
-  { label: "Weeks 4–9", desc: "ClinicalScribe AI" },
-  { label: "Weeks 7–10", desc: "Agent Systems" },
-  { label: "Weeks 10–13", desc: "FHIR & Compliance" },
-];
-
 export default function About() {
   return (
     <div className="max-w-3xl mx-auto px-4 py-20">
@@ -18,80 +11,77 @@ export default function About() {
       <div className="rounded-xl p-8 mb-10 text-white" style={{ backgroundColor: "#0f172a" }}>
         <h2 className="text-2xl font-bold mb-1">Fidelis Emmanuel</h2>
         <p className="font-medium mb-4" style={{ color: "#0d9488" }}>
-          Healthcare AI Engineer &amp; Consultant
+          Founder, Emmanuel Digital Health LLC · Healthcare AI Engineer
         </p>
         <p className="text-slate-300 leading-relaxed">
-          I spent 10 years working in behavioral health — as a clinician and technology advocate —
-          before transitioning into AI engineering. I&apos;ve seen firsthand the documentation burden
-          clinicians carry, the gaps in risk management systems, and the missed opportunities for AI
-          to make care better and safer.
+          10 years in behavioral health. I built MindBridge because I lived the problem —
+          watching clinicians spend more time on documentation than with patients, watching
+          high-risk individuals fall through the cracks because there was no unified system
+          to track them. MindBridge is what I wish existed when I worked in the field.
         </p>
       </div>
 
       <div className="space-y-10">
         <div>
           <h3 className="text-xl font-bold mb-3" style={{ color: "#0f172a" }}>
-            Background
+            The Problem I Saw
           </h3>
           <p className="text-slate-600 leading-relaxed">
-            With a decade in behavioral health technology, I understand both the clinical workflows
-            and the infrastructure challenges that healthcare organizations face. I translate that
-            domain expertise into AI systems that are safe, compliant, and actually useful to
-            clinicians — not just demos that look good in board meetings.
+            Behavioral health clinicians are drowning in paperwork. The average therapist spends
+            30–45 minutes per session on documentation. Crisis patients are identified too late.
+            Billing errors cost clinics thousands per month. And every EHR on the market was
+            built for primary care — not behavioral health workflows.
           </p>
         </div>
 
         <div>
           <h3 className="text-xl font-bold mb-3" style={{ color: "#0f172a" }}>
-            The 90-Day Healthcare AI Engineering Program
+            Why I Built MindBridge
           </h3>
           <p className="text-slate-600 leading-relaxed mb-4">
-            In 2025, I committed to a rigorous 90-day intensive to become a production-ready
-            Healthcare AI Engineer — covering full-stack development (Next.js + FastAPI), Claude
-            API integration, FHIR standards, multi-agent systems, and production deployment on
-            Railway and Vercel.
+            After a decade in behavioral health technology, I transitioned into AI engineering
+            with one goal: build the EHR that behavioral health clinics actually need. MindBridge
+            is a production HIPAA-compliant platform with AI clinical documentation, PHQ-9 crisis
+            auto-triage, 837P billing, telehealth, and a patient portal — purpose-built for the
+            behavioral health workflow.
           </p>
           <div
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold mb-6"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold"
             style={{ backgroundColor: "#f0fdf4", border: "1px solid #bbf7d0", color: "#15803d" }}
           >
-            <span>📍</span>
-            <span>Week 7 of 12 complete — 6 production modules deployed — 24/24 tests passing — 69+ GitHub commits</span>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {program.map((item) => (
-              <div
-                key={item.label}
-                className="rounded-lg p-4 text-center"
-                style={{ backgroundColor: "#f8fafc", border: "1px solid #e2e8f0" }}
-              >
-                <p className="font-semibold text-sm" style={{ color: "#0d9488" }}>
-                  {item.label}
-                </p>
-                <p className="text-slate-700 text-sm mt-1">{item.desc}</p>
-              </div>
-            ))}
+            <span>✓</span>
+            <span>136 tests passing · 21 API routes · Live in production</span>
           </div>
         </div>
 
         <div>
           <h3 className="text-xl font-bold mb-3" style={{ color: "#0f172a" }}>
-            Why Healthcare AI
+            Emmanuel Digital Health LLC
           </h3>
           <p className="text-slate-600 leading-relaxed">
-            Healthcare documentation, risk stratification, and care coordination are three areas
-            where AI can reduce clinician burden and improve patient outcomes — today, with existing
-            technology. I build the systems that make that real.
+            Emmanuel Digital Health LLC is the company behind MindBridge. We provide Healthcare AI
+            consulting, EHR implementation, and clinical workflow automation for behavioral health
+            organizations. If you are running a behavioral health clinic and want to see what
+            AI-powered documentation and risk management looks like in practice — book a demo.
           </p>
         </div>
 
-        <Link
-          href="/contact"
-          className="inline-block text-white px-8 py-3 rounded-md font-semibold hover:opacity-90 transition-colors"
-          style={{ backgroundColor: "#0d9488" }}
-        >
-          Work With Me
-        </Link>
+        <div className="flex flex-wrap gap-4">
+          <Link
+            href="/demo"
+            className="inline-block text-white px-8 py-3 rounded-md font-semibold hover:opacity-90 transition-colors"
+            style={{ backgroundColor: "#0d9488" }}
+          >
+            Request a Demo
+          </Link>
+          <Link
+            href="/contact"
+            className="inline-block px-8 py-3 rounded-md font-semibold hover:opacity-90 transition-colors"
+            style={{ border: "1px solid #0d9488", color: "#0d9488" }}
+          >
+            Contact
+          </Link>
+        </div>
       </div>
     </div>
   );

@@ -3,8 +3,8 @@ import Link from "next/link";
 import { useState } from "react";
 
 const links = [
-  { href: "/services", label: "Services" },
-  { href: "/portfolio", label: "Portfolio" },
+  { href: "/features", label: "Features" },
+  { href: "/pricing", label: "Pricing" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ];
@@ -32,13 +32,13 @@ export default function Navbar() {
             </Link>
           ))}
           <Link
-            href="/contact"
+            href="/demo"
             className="text-white px-4 py-2 rounded-md text-sm font-semibold transition-colors"
             style={{ backgroundColor: "#0d9488" }}
             onMouseOver={(e) => (e.currentTarget.style.backgroundColor = "#14b8a6")}
             onMouseOut={(e) => (e.currentTarget.style.backgroundColor = "#0d9488")}
           >
-            Get In Touch
+            Request Demo
           </Link>
         </div>
 
@@ -68,12 +68,12 @@ export default function Navbar() {
             </Link>
           ))}
           <Link
-            href="/contact"
+            href="/demo"
             className="text-white text-center py-2 rounded-md text-sm font-semibold mt-2"
             style={{ backgroundColor: "#0d9488" }}
             onClick={() => setOpen(false)}
           >
-            Get In Touch
+            Request Demo
           </Link>
         </div>
       )}
