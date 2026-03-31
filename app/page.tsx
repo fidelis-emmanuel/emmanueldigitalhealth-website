@@ -53,7 +53,7 @@ export default function Home() {
 
           {/* Stats bar */}
           <p className="text-sm mb-10 tracking-wide" style={{ color: "#0d9488" }}>
-            136 Tests Passing &nbsp;&middot;&nbsp; HIPAA Compliant &nbsp;&middot;&nbsp; Built by a Behavioral Health Veteran &nbsp;&middot;&nbsp; Live in Production
+            184 Tests Passing &nbsp;&middot;&nbsp; HIPAA Compliant &nbsp;&middot;&nbsp; Built by a Behavioral Health Veteran &nbsp;&middot;&nbsp; Live in Production
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
