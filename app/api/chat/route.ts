@@ -25,7 +25,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ content });
   } catch {
     return NextResponse.json(
-      { content: "I'm having trouble connecting right now. Email hello@mindbridge.health for help." },
+      { content: "I'm having trouble connecting right now. Email fidejo2k@yahoo.com for help." },
       { status: 200 }
     );
   }

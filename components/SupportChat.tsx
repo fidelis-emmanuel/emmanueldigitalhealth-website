@@ -64,7 +64,7 @@ export default function SupportChat({ systemPrompt, assistantName, avatarLabel }
         ...prev,
         {
           role: "assistant",
-          content: "Sorry, I'm having trouble connecting. Email hello@mindbridge.health for help.",
+          content: "Sorry, I'm having trouble connecting. Email fidejo2k@yahoo.com for help.",
         },
       ]);
     } finally {
@@ -215,8 +215,8 @@ export default function SupportChat({ systemPrompt, assistantName, avatarLabel }
             {msgCount >= RATE_LIMIT && (
               <p style={{ color: "#94a3b8", fontSize: "11px", textAlign: "center", margin: "4px 0" }}>
                 Session limit reached. Email{" "}
-                <a href="mailto:hello@mindbridge.health" style={{ color: "#0d9488" }}>
-                  hello@mindbridge.health
+                <a href="mailto:fidejo2k@yahoo.com" style={{ color: "#0d9488" }}>
+                  fidejo2k@yahoo.com
                 </a>
               </p>
             )}

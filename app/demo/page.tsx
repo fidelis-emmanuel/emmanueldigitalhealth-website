@@ -36,14 +36,14 @@ export default function Demo() {
         <div className="rounded-lg p-6 text-center" style={{ backgroundColor: "#f8fafc", border: "1px solid #e2e8f0" }}>
           <p className="text-slate-700 font-medium mb-4">Schedule via email</p>
           <a
-            href="mailto:hello@mindbridge.health?subject=MindBridge Demo Request&body=Hi Fidelis,%0A%0AI'd like to schedule a demo of MindBridge Health AI.%0A%0AClinic name:%0ANumber of clinicians:%0ABest time to meet:%0A%0AThanks"
+            href="mailto:fidejo2k@yahoo.com?subject=MindBridge Demo Request&body=Hi Fidelis,%0A%0AI'd like to schedule a demo of MindBridge Health AI.%0A%0AClinic name:%0ANumber of clinicians:%0ABest time to meet:%0A%0AThanks"
             className="inline-block text-white px-8 py-3 rounded-md font-semibold hover:opacity-90 transition-colors"
             style={{ backgroundColor: "#0d9488" }}
           >
             Email to Schedule →
           </a>
           <p className="text-slate-500 text-xs mt-3">
-            Or email directly: hello@mindbridge.health
+            Or email directly: fidejo2k@yahoo.com
           </p>
         </div>
       </div>

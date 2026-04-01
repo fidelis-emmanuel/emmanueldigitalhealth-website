@@ -15,6 +15,24 @@ const clinicianModules = [
     details: ["Sub-3-second generation", "ICD-10 code extraction", "Medication change detection", "Auto-trigger on appointment completion"],
   },
   {
+    icon: "🛡️",
+    name: "Clawback Guard AI",
+    desc: "AI audit layer that scans your SOAP notes before you sign them. Flags documentation gaps, CPT code mismatches, and missing medical necessity statements — the same patterns that trigger insurance clawbacks.",
+    details: ["Pre-signature audit scan", "CPT ↔ SOAP mismatch detection", "Medical necessity gap flagging", "Reduces clawback risk proactively"],
+  },
+  {
+    icon: "🧵",
+    name: "Golden Thread AI",
+    desc: "Verifies that your treatment plan goals, session notes, and billing codes form a coherent 'golden thread' — the clinical continuity auditors look for. Automatically identifies broken links across the care record.",
+    details: ["Goal ↔ note ↔ billing alignment", "Cross-session continuity check", "CARF-ready audit trail", "Auto-flagged inconsistencies"],
+  },
+  {
+    icon: "🔍",
+    name: "Find a Therapist Directory",
+    desc: "Clinicians listed in the MindBridge directory appear on our public patient-facing search. New patients searching for behavioral health providers see your name, specialties, and availability — we send you referrals.",
+    details: ["Public directory listing", "Specialty + availability filters", "Telehealth badge display", "Accepts new patients toggle"],
+  },
+  {
     icon: "🚨",
     name: "Crisis Protocol",
     desc: "PHQ-9 auto-triage creates crisis events when scores exceed clinical thresholds. Severity automatically classified (low / medium / high / critical). Care team alert sent immediately.",
@@ -54,7 +72,7 @@ const clinicianModules = [
     icon: "🔐",
     name: "Security & Compliance",
     desc: "JWT clinician authentication. Patient portal magic-link auth. Encrypted transit. Full audit log with IP tracking. HIPAA-compliant architecture. CARF-ready crisis documentation.",
-    details: ["JWT auth (8hr tokens)", "Magic-link patient portal", "Full audit log", "HIPAA architecture"],
+    details: ["JWT auth (7-day tokens)", "Magic-link patient portal", "Full audit log", "HIPAA architecture"],
   },
 ];
 
@@ -171,6 +189,48 @@ export default function Features() {
             </div>
           </div>
         ))}
+      </div>
+
+      {/* Comparison table */}
+      <div className="mt-20 mb-16">
+        <h2 className="text-2xl font-bold text-center mb-2" style={{ color: "#0f172a" }}>
+          How MindBridge Compares
+        </h2>
+        <p className="text-slate-500 text-center mb-10 text-sm">
+          MindBridge is the only behavioral-health EHR with AI documentation, clawback protection, and patient acquisition built in at no extra cost.
+        </p>
+        <div className="overflow-x-auto rounded-xl" style={{ border: "1px solid #e2e8f0" }}>
+          <table className="w-full text-sm">
+            <thead>
+              <tr style={{ backgroundColor: "#0f172a" }}>
+                <th className="text-left px-6 py-4 text-white font-semibold">Feature</th>
+                <th className="px-6 py-4 font-semibold" style={{ color: "#0d9488" }}>MindBridge</th>
+                <th className="px-6 py-4 text-slate-300 font-semibold">TherapyNotes</th>
+                <th className="px-6 py-4 text-slate-300 font-semibold">SimplePractice</th>
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                ["AI SOAP Notes", "✓ Included free", "✗ Not available", "✓ $17.50/mo extra"],
+                ["Clawback Guard AI", "✓ Included", "✗ Not available", "✗ Not available"],
+                ["Golden Thread AI", "✓ Included", "✗ Not available", "✗ Not available"],
+                ["PHQ-9 Crisis Triage", "✓ Auto-triage", "Manual only", "Manual only"],
+                ["837P Billing", "✓ Included", "✓ Included", "✓ Included"],
+                ["FHIR R4 Interoperability", "✓ Included", "✗ Limited", "✗ Limited"],
+                ["Patient Directory (referrals)", "✓ Included", "✗ Not available", "✓ Add-on"],
+                ["Telehealth Video", "✓ Included", "✓ Add-on", "✓ Add-on"],
+                ["Starting Price", "$49/mo", "$59/mo", "$29/mo + add-ons"],
+              ].map(([feature, mb, tn, sp], i) => (
+                <tr key={feature} style={{ backgroundColor: i % 2 === 0 ? "#f8fafc" : "#ffffff", borderTop: "1px solid #e2e8f0" }}>
+                  <td className="px-6 py-4 font-medium text-slate-700">{feature}</td>
+                  <td className="px-6 py-4 text-center font-semibold" style={{ color: mb.startsWith("✓") ? "#0d9488" : "#64748b" }}>{mb}</td>
+                  <td className="px-6 py-4 text-center text-slate-500">{tn}</td>
+                  <td className="px-6 py-4 text-center text-slate-500">{sp}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
 
       <div className="text-center mt-16">

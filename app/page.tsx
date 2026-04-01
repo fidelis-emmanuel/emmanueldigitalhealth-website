@@ -29,6 +29,9 @@ const features = [
   "FHIR R4 interoperability",
   "HIPAA-compliant audit logging",
   "JWT clinician authentication",
+  "Clawback Guard — catches audit risks before you sign",
+  "AI Note Taker included free (SimplePractice charges $17.50/mo)",
+  "Find a Therapist directory — we send you new patients",
 ];
 
 export default function Home() {
@@ -159,12 +162,12 @@ export default function Home() {
       <section className="py-20 px-4" style={{ backgroundColor: "#0f172a" }}>
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold text-white mb-4">Simple, Transparent Pricing</h2>
-          <p className="text-slate-400 mb-8">Beta access available now. Limited spots.</p>
+          <p className="text-slate-400 mb-8">Early Access pricing — lock in your rate forever.</p>
           <div className="grid md:grid-cols-3 gap-6 mb-10">
             {[
-              { name: "Beta", price: "$299", desc: "1–3 clinicians · Full platform · Priority support" },
-              { name: "Standard", price: "$499", desc: "Up to 10 clinicians · Everything in Beta + analytics", featured: true },
-              { name: "Clinic", price: "$999", desc: "Unlimited clinicians · Custom integrations · SLA" },
+              { name: "Starter", price: "$49", desc: "1 clinician · Full platform · Clawback Guard + AI SOAP Notes free" },
+              { name: "Growth", price: "$149", desc: "Up to 5 clinicians · Analytics + Telehealth + Patient Directory", featured: true },
+              { name: "Clinic", price: "$299", desc: "Up to 15 clinicians · FHIR R4 + White-label portal + SMS Waitlist" },
             ].map((tier) => (
               <div
                 key={tier.name}

@@ -6,8 +6,8 @@ export default function Footer() {
           <p className="text-white font-semibold text-lg">Emmanuel Digital Health LLC</p>
           <p className="text-sm mt-1">MindBridge Health AI</p>
           <p className="text-sm mt-1">
-            <a href="mailto:hello@mindbridge.health" style={{ color: "#0d9488" }}>
-              hello@mindbridge.health
+            <a href="mailto:fidejo2k@yahoo.com" style={{ color: "#0d9488" }}>
+              fidejo2k@yahoo.com
             </a>
           </p>
         </div>
