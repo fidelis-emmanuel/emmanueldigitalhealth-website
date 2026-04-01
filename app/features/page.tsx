@@ -234,14 +234,32 @@ export default function Features() {
       </div>
 
       <div className="text-center mt-16">
-        <p className="text-slate-600 mb-6">Ready to see it running?</p>
-        <a
-          href="/demo"
-          className="inline-block text-white px-8 py-3 rounded-md font-semibold hover:opacity-90 transition-colors"
-          style={{ backgroundColor: "#0d9488" }}
-        >
-          Request a Demo →
-        </a>
+        {activeTab === "clinicians" ? (
+          <>
+            <p className="text-slate-600 mb-6">Ready to see it running?</p>
+            <a
+              href="/demo"
+              className="inline-block text-white px-8 py-3 rounded-md font-semibold hover:opacity-90 transition-colors"
+              style={{ backgroundColor: "#0d9488" }}
+            >
+              Request a Demo →
+            </a>
+          </>
+        ) : (
+          <>
+            <p className="text-slate-600 mb-4">Looking for mental health support?</p>
+            <a
+              href="https://mind-bridge-health-ai.vercel.app/find-a-therapist"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block text-white px-8 py-3 rounded-md font-semibold hover:opacity-90 transition-colors"
+              style={{ backgroundColor: "#0d9488" }}
+            >
+              Find a Therapist Near You →
+            </a>
+            <p className="text-slate-400 text-sm mt-4">Ask your provider if they use MindBridge Health AI</p>
+          </>
+        )}
       </div>
     </div>
   );

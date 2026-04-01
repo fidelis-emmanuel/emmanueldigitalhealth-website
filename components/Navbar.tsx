@@ -9,6 +9,8 @@ const links = [
   { href: "/contact", label: "Contact" },
 ];
 
+const FIND_THERAPIST_URL = "https://mind-bridge-health-ai.vercel.app/find-a-therapist";
+
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
@@ -31,6 +33,15 @@ export default function Navbar() {
               {l.label}
             </Link>
           ))}
+          <a
+            href={FIND_THERAPIST_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm font-medium transition-colors"
+            style={{ color: "#0d9488" }}
+          >
+            Find a Therapist
+          </a>
           <Link
             href="/demo"
             className="text-white px-4 py-2 rounded-md text-sm font-semibold transition-colors"
@@ -67,6 +78,16 @@ export default function Navbar() {
               {l.label}
             </Link>
           ))}
+          <a
+            href={FIND_THERAPIST_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm font-medium py-2 border-b border-slate-700"
+            style={{ color: "#0d9488" }}
+            onClick={() => setOpen(false)}
+          >
+            Find a Therapist
+          </a>
           <Link
             href="/demo"
             className="text-white text-center py-2 rounded-md text-sm font-semibold mt-2"

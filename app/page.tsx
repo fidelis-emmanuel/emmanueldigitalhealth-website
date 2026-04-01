@@ -55,8 +55,11 @@ export default function Home() {
           </p>
 
           {/* Stats bar */}
-          <p className="text-sm mb-10 tracking-wide" style={{ color: "#0d9488" }}>
+          <p className="text-sm mb-3 tracking-wide" style={{ color: "#0d9488" }}>
             184 Tests Passing &nbsp;&middot;&nbsp; HIPAA Compliant &nbsp;&middot;&nbsp; Built by a Behavioral Health Veteran &nbsp;&middot;&nbsp; Live in Production
+          </p>
+          <p className="text-sm mb-10 text-slate-400">
+            AI Notes Included Free &nbsp;&middot;&nbsp; No Setup Fees &nbsp;&middot;&nbsp; Cancel Anytime
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
