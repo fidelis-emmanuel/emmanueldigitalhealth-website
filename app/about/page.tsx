@@ -50,7 +50,7 @@ export default function About() {
             style={{ backgroundColor: "#f0fdf4", border: "1px solid #bbf7d0", color: "#15803d" }}
           >
             <span>✓</span>
-            <span>184 tests passing · 21 API routes · Live in production</span>
+            <span>189 tests passing · 21 API routes · Live in production</span>
           </div>
         </div>
 

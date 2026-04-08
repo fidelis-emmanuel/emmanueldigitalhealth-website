@@ -56,7 +56,7 @@ export default function Home() {
 
           {/* Stats bar */}
           <p className="text-sm mb-3 tracking-wide" style={{ color: "#0d9488" }}>
-            184 Tests Passing &nbsp;&middot;&nbsp; HIPAA Compliant &nbsp;&middot;&nbsp; Built by a Behavioral Health Veteran &nbsp;&middot;&nbsp; Live in Production
+            189 Tests Passing &nbsp;&middot;&nbsp; HIPAA Compliant &nbsp;&middot;&nbsp; Built by a Behavioral Health Veteran &nbsp;&middot;&nbsp; Live in Production
           </p>
           <p className="text-sm mb-10 text-slate-400">
             AI Notes Included Free &nbsp;&middot;&nbsp; No Setup Fees &nbsp;&middot;&nbsp; Cancel Anytime
