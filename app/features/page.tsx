@@ -1,5 +1,6 @@
 "use client";
-import { useState } from "react";
+import { useSearchParams, useRouter } from "next/navigation";
+import { Suspense } from "react";
 
 const clinicianModules = [
   {
@@ -115,9 +116,15 @@ const patientModules = [
   },
 ];
 
-export default function Features() {
-  const [activeTab, setActiveTab] = useState<"clinicians" | "patients">("clinicians");
+function FeaturesContent() {
+  const searchParams = useSearchParams();
+  const router = useRouter();
+  const activeTab = searchParams.get("view") === "patients" ? "patients" : "clinicians";
   const modules = activeTab === "clinicians" ? clinicianModules : patientModules;
+
+  function setActiveTab(tab: "clinicians" | "patients") {
+    router.push(tab === "patients" ? "/features?view=patients" : "/features", { scroll: false });
+  }
 
   return (
     <div className="max-w-5xl mx-auto px-4 py-20">
@@ -255,12 +262,20 @@ export default function Features() {
               className="inline-block text-white px-8 py-3 rounded-md font-semibold hover:opacity-90 transition-colors"
               style={{ backgroundColor: "#0d9488" }}
             >
-              Find a Therapist Near You →
+              Find a Therapist →
             </a>
             <p className="text-slate-400 text-sm mt-4">Ask your provider if they use MindBridge Health AI</p>
           </>
         )}
       </div>
     </div>
+  );
+}
+
+export default function Features() {
+  return (
+    <Suspense fallback={null}>
+      <FeaturesContent />
+    </Suspense>
   );
 }

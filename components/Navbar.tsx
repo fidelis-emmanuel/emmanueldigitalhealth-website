@@ -1,8 +1,9 @@
 "use client";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, Suspense } from "react";
+import { usePathname, useSearchParams } from "next/navigation";
 
-const links = [
+const ALL_LINKS = [
   { href: "/features", label: "Features" },
   { href: "/pricing", label: "Pricing" },
   { href: "/about", label: "About" },
@@ -11,8 +12,12 @@ const links = [
 
 const FIND_THERAPIST_URL = "https://mind-bridge-health-ai.vercel.app/find-a-therapist";
 
-export default function Navbar() {
+function NavbarContent() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const isPatientView = pathname === "/features" && searchParams.get("view") === "patients";
+  const links = isPatientView ? ALL_LINKS.filter((l) => l.href !== "/pricing") : ALL_LINKS;
 
   return (
     <nav className="sticky top-0 z-50 border-b border-[#1e293b]" style={{ backgroundColor: "#0f172a" }}>
@@ -33,24 +38,40 @@ export default function Navbar() {
               {l.label}
             </Link>
           ))}
-          <a
-            href={FIND_THERAPIST_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm font-medium transition-colors"
-            style={{ color: "#0d9488" }}
-          >
-            Find a Therapist
-          </a>
-          <Link
-            href="/demo"
-            className="text-white px-4 py-2 rounded-md text-sm font-semibold transition-colors"
-            style={{ backgroundColor: "#0d9488" }}
-            onMouseOver={(e) => (e.currentTarget.style.backgroundColor = "#14b8a6")}
-            onMouseOut={(e) => (e.currentTarget.style.backgroundColor = "#0d9488")}
-          >
-            Request Demo
-          </Link>
+          {!isPatientView && (
+            <a
+              href={FIND_THERAPIST_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm font-medium transition-colors"
+              style={{ color: "#0d9488" }}
+            >
+              Find a Therapist
+            </a>
+          )}
+          {isPatientView ? (
+            <a
+              href={FIND_THERAPIST_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white px-4 py-2 rounded-md text-sm font-semibold transition-colors"
+              style={{ backgroundColor: "#0d9488" }}
+              onMouseOver={(e) => (e.currentTarget.style.backgroundColor = "#14b8a6")}
+              onMouseOut={(e) => (e.currentTarget.style.backgroundColor = "#0d9488")}
+            >
+              Find a Therapist →
+            </a>
+          ) : (
+            <Link
+              href="/demo"
+              className="text-white px-4 py-2 rounded-md text-sm font-semibold transition-colors"
+              style={{ backgroundColor: "#0d9488" }}
+              onMouseOver={(e) => (e.currentTarget.style.backgroundColor = "#14b8a6")}
+              onMouseOut={(e) => (e.currentTarget.style.backgroundColor = "#0d9488")}
+            >
+              Request Demo
+            </Link>
+          )}
         </div>
 
         {/* Mobile hamburger */}
@@ -78,26 +99,49 @@ export default function Navbar() {
               {l.label}
             </Link>
           ))}
-          <a
-            href={FIND_THERAPIST_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm font-medium py-2 border-b border-slate-700"
-            style={{ color: "#0d9488" }}
-            onClick={() => setOpen(false)}
-          >
-            Find a Therapist
-          </a>
-          <Link
-            href="/demo"
-            className="text-white text-center py-2 rounded-md text-sm font-semibold mt-2"
-            style={{ backgroundColor: "#0d9488" }}
-            onClick={() => setOpen(false)}
-          >
-            Request Demo
-          </Link>
+          {!isPatientView && (
+            <a
+              href={FIND_THERAPIST_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm font-medium py-2 border-b border-slate-700"
+              style={{ color: "#0d9488" }}
+              onClick={() => setOpen(false)}
+            >
+              Find a Therapist
+            </a>
+          )}
+          {isPatientView ? (
+            <a
+              href={FIND_THERAPIST_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white text-center py-2 rounded-md text-sm font-semibold mt-2"
+              style={{ backgroundColor: "#0d9488" }}
+              onClick={() => setOpen(false)}
+            >
+              Find a Therapist →
+            </a>
+          ) : (
+            <Link
+              href="/demo"
+              className="text-white text-center py-2 rounded-md text-sm font-semibold mt-2"
+              style={{ backgroundColor: "#0d9488" }}
+              onClick={() => setOpen(false)}
+            >
+              Request Demo
+            </Link>
+          )}
         </div>
       )}
     </nav>
+  );
+}
+
+export default function Navbar() {
+  return (
+    <Suspense fallback={null}>
+      <NavbarContent />
+    </Suspense>
   );
 }
