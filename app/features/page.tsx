@@ -1,6 +1,5 @@
 "use client";
-import { useSearchParams, useRouter } from "next/navigation";
-import { Suspense } from "react";
+import { useState } from "react";
 
 const clinicianModules = [
   {
@@ -116,15 +115,9 @@ const patientModules = [
   },
 ];
 
-function FeaturesContent() {
-  const searchParams = useSearchParams();
-  const router = useRouter();
-  const activeTab = searchParams.get("view") === "patients" ? "patients" : "clinicians";
+export default function Features() {
+  const [activeTab, setActiveTab] = useState<"clinicians" | "patients">("clinicians");
   const modules = activeTab === "clinicians" ? clinicianModules : patientModules;
-
-  function setActiveTab(tab: "clinicians" | "patients") {
-    router.push(tab === "patients" ? "/features?view=patients" : "/features", { scroll: false });
-  }
 
   return (
     <div className="max-w-5xl mx-auto px-4 py-20">
@@ -198,8 +191,8 @@ function FeaturesContent() {
         ))}
       </div>
 
-      {/* Comparison table */}
-      <div className="mt-20 mb-16">
+      {/* Comparison table — clinician view only */}
+      {activeTab === "clinicians" && <div className="mt-20 mb-16">
         <h2 className="text-2xl font-bold text-center mb-2" style={{ color: "#0f172a" }}>
           How MindBridge Compares
         </h2>
@@ -238,7 +231,7 @@ function FeaturesContent() {
             </tbody>
           </table>
         </div>
-      </div>
+      </div>}
 
       <div className="text-center mt-16">
         {activeTab === "clinicians" ? (
@@ -269,13 +262,5 @@ function FeaturesContent() {
         )}
       </div>
     </div>
-  );
-}
-
-export default function Features() {
-  return (
-    <Suspense fallback={null}>
-      <FeaturesContent />
-    </Suspense>
   );
 }
